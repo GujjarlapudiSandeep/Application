@@ -17,4 +17,5 @@ function jobsubmit() {
 
   jobArray.push(jobObject);
   localStorage.setItem("joblist", JSON.stringify(jobArray));
+  window.location.href = "application.html";
 }
