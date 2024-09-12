@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BookMarkPage</title>
+    <style>
+      .deleteText {
+        color: red;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <div>
@@ -11,16 +17,48 @@
       <div><a href="./Application.html"> Applied Jobs </a></div>
       <div><a href="./bookmark.html"> BookMarks </a></div>
     </div>
-    <table>
-      <thead>
-        <tr>
-          <th>name</th>
-          <th>Email</th>
-          <th>JobApplied</th>
-          <th>Salary Expected</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <h1>BookMark</h1>
+    <main>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>JobApplied</th>
+            <th>Salary Expected</th>
+            <th>Delete BookMark</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </main>
   </body>
 </html>
+<script>
+  let bookmarkArray = JSON.parse(localStorage.getItem("bookmark"));
+  bookmarkArray.forEach(function (elem, index) {
+    let tr = document.createElement("tr");
+    let td1 = document.createElement("td");
+    td1.innerText = elem.personName;
+    let td2 = document.createElement("td");
+    td2.innerText = elem.personEmail;
+    let td3 = document.createElement("td");
+    td3.innerText = elem.personRole;
+    let td4 = document.createElement("td");
+    td4.innerText = elem.personSalary;
+    let td5 = document.createElement("td");
+    td5.innerText = "Delete";
+    td5.setAttribute("class", "deleteText");
+    td5.addEventListener("click", function () {
+      deleteItem(elem, index);
+    });
+
+    tr.append(td1, td2, td3, td4, td5);
+    document.querySelector("tbody").append(tr);
+  });
+  function deleteItem(elem, index) {
+    bookmarkArray.splice(index, 1);
+    localStorage.setItem("bookmark", JSON.stringify(bookmarkArray));
+    window.location.reload();
+  }
+</script>
