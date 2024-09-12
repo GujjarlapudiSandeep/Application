@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application</title>
+    <link rel="stylesheet" href="./index.css"></link>
+    
+</head>
+  <body>
+    <div>
+      <div><a href="./index.html"> Home </a></div>
+      <div><a href=""> Applied Jobs </a></div>
+      <div><a href=""> BookMarks </a></div>
+    </div>
+    <form id="form">
+      <div>
+        <h2 >Enter your Application Details</h2>
+        <div id="details" >
+        Name 
+        <input type="text" placeholder="Enter Your Name" id="name" />
+        <br />
+        Email Id
+        <input type="email" placeholder="Enter Your Email" id="email" />
+        <br/>
+        Select Your Job Preference
+        <select id="role">
+            <option value=" Full stack Developer">Full stack Developer</option>
+            <option value="Backend Developer">Backend Developer</option>
+            <option value="Frontend Developer">Frontend Developer</option>
+        </select>
+        <br/>
+        salary 
+        <input type="number" placeholder="Enter Your Expected Salary" id="salary">
+        <br/>
+        <input type="submit" id="submit" value="submit">
+      </div>
+      </div>
+    </form>
+  </body>
+</html>
+<script src="./index.js"></script>
