@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ApplicationDetails</title>
+    <style>
+      .colorText {
+        color: blue;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <div>
@@ -41,6 +47,7 @@
     let td4 = document.createElement("td");
     td4.innerText = elem.personSalary;
     let td5 = document.createElement("td");
+    td5.setAttribute("class", "colorText");
     td5.innerText = "Bookmark";
     td5.addEventListener("click", function () {
       bookmarkfun(elem);
